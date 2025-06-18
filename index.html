@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Beyondsec Technology</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #0d1117;
       color: #ffffff;
@@ -17,35 +20,25 @@
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       padding: 20px 40px;
       background-color: #0b0f14;
       border-bottom: 1px solid #1f2937;
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: #00cfff;
       font-family: 'Orbitron', sans-serif;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
     nav a {
+      margin-left: 20px;
       color: #ffffff;
       text-decoration: none;
-      font-weight: 500;
       transition: color 0.3s ease;
     }
 
@@ -54,104 +47,76 @@
     }
 
     .hero {
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0d1117, #101820);
       text-align: center;
-      padding: 0 20px;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom right, #0d1117, #10151c);
     }
 
     .hero h1 {
-      font-size: 3.5rem;
-      word-break: break-word;
-      background: linear-gradient(90deg, #00cfff, #00ffb7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 2.8rem;
+      color: #00cfff;
     }
 
-    .typing {
-      color: #cbd5e1;
+    .hero p {
+      margin-top: 20px;
       font-size: 1.2rem;
-      margin-top: 15px;
-      height: 30px;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid #00ffb7;
-      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent }
+      color: #cbd5e1;
     }
 
     .btn {
       margin-top: 30px;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 8px;
-      background-color: #00cfff;
+      background-color: #00ffb7;
       color: #0d1117;
-      font-size: 1rem;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 25px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #00ffb7;
-      transform: scale(1.05);
+      background-color: #00cfff;
     }
 
     .section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ffb7;
+      text-align: center;
     }
 
     .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
     }
 
-    .card {
-      background-color: #161b22;
+    .service {
+      background-color: #1a1f29;
       padding: 25px;
-      border-radius: 12px;
-      width: 280px;
-      max-width: 90vw;
+      border-radius: 10px;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #2c3541;
+      transition: transform 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0, 255, 183, 0.2);
+    .service:hover {
+      transform: translateY(-5px);
     }
 
-    .card h3 {
+    .service h3 {
       color: #00cfff;
       margin-bottom: 10px;
     }
 
-    .footer {
+    footer {
       background-color: #0b0f14;
       text-align: center;
       padding: 30px 20px;
@@ -160,98 +125,54 @@
       border-top: 1px solid #1f2937;
     }
 
-    @media (max-width: 1024px) {
-      .services {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 10px;
-        gap: 15px;
-      }
-    }
-
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">Beyondsec</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">Beyondsec</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
 
-  <section class="hero" id="home">
-    <h1>Beyondsec Technology</h1>
-    <div class="typing">Empowering Cybersecurity with Innovation, Intelligence & Integrity</div>
-    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-  </section>
+<section class="hero">
+  <h1>Welcome to Beyondsec Technology</h1>
+  <p>Innovating Cybersecurity Solutions for a Safer Digital Future</p>
+  <a href="about.html"><button class="btn">Learn More</button></a>
+</section>
 
-  <section class="section" id="services">
-    <h2 style="text-align: center; margin-bottom: 40px;">Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>VAPT</h3>
-        <p>Comprehensive Vulnerability Assessment & Penetration Testing to secure your digital assets.</p>
-      </div>
-      <div class="card">
-        <h3>Cyber Consultation</h3>
-        <p>Strategic cybersecurity planning tailored to your organization's needs.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Security</h3>
-        <p>Protect your cloud infrastructure with industry-leading standards and tools.</p>
-      </div>
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Penetration Testing</h3>
+      <p>Simulate cyberattacks to detect and fix vulnerabilities in your systems.</p>
     </div>
-  </section>
+    <div class="service">
+      <h3>Cloud Security</h3>
+      <p>Protect your cloud infrastructure with our advanced security architecture.</p>
+    </div>
+    <div class="service">
+      <h3>Security Consultancy</h3>
+      <p>Custom advisory services for organizations seeking robust cybersecurity strategies.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="about">
-    <h2 style="text-align: center;">Why Choose Us?</h2>
-    <p style="text-align: center; max-width: 800px; margin: 20px auto; color: #cbd5e1;">
-      Beyondsec is a team of passionate security experts dedicated to protecting your digital world. 
-      With proven expertise, ethical practices, and a client-first approach, we ensure complete peace of mind.
-    </p>
-  </section>
-
-  <section class="section" id="contact">
-    <h2 style="text-align: center;">Letâs Secure Your Future</h2>
-    <p style="text-align: center; color: #cbd5e1;">
-      Reach out at <strong>contact@beyondsec.tech</strong> or call <strong>+91-XXXXXXXXXX</strong>
-    </p>
-  </section>
-
-  <footer class="footer">
-    &copy; 2025 Beyondsec Technology. All rights reserved.
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    document.querySelectorAll('.section').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+<footer>
+  &copy; 2025 Beyondsec Technology. All rights reserved.
+</footer>
 
 </body>
 </html>
