@@ -23,6 +23,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       padding: 20px 40px;
       background-color: #0b0f14;
       border-bottom: 1px solid #1f2937;
@@ -35,8 +36,13 @@
       font-family: 'Orbitron', sans-serif;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
     nav a {
-      margin-left: 30px;
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
@@ -60,6 +66,7 @@
 
     .hero h1 {
       font-size: 3.5rem;
+      word-break: break-word;
       background: linear-gradient(90deg, #00cfff, #00ffb7);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -129,6 +136,7 @@
       padding: 25px;
       border-radius: 12px;
       width: 280px;
+      max-width: 90vw;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -152,14 +160,26 @@
       border-top: 1px solid #1f2937;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
+    @media (max-width: 1024px) {
       .services {
         flex-direction: column;
         align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
       }
     }
   </style>
@@ -209,9 +229,9 @@
   </section>
 
   <section class="section" id="contact">
-    <h2 style="text-align: center;">Let’s Secure Your Future</h2>
+    <h2 style="text-align: center;">Letâs Secure Your Future</h2>
     <p style="text-align: center; color: #cbd5e1;">
-      Reach out at <strong>beyondsectechnology@gmail.com</strong> or call <strong>+91-XXXXXXXXXX</strong>
+      Reach out at <strong>contact@beyondsec.tech</strong> or call <strong>+91-XXXXXXXXXX</strong>
     </p>
   </section>
 
