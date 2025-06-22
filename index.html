@@ -1,178 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beyondsec Technology</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #ffffff;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #0b0f14;
-      border-bottom: 1px solid #1f2937;
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #00cfff;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    nav a {
-      margin-left: 20px;
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00ffb7;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(to bottom right, #0d1117, #10151c);
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      color: #00cfff;
-    }
-
-    .hero p {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
-
-    .btn {
-      margin-top: 30px;
-      background-color: #00ffb7;
-      color: #0d1117;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #00cfff;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #00ffb7;
-      text-align: center;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .service {
-      background-color: #1a1f29;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      border: 1px solid #2c3541;
-      transition: transform 0.3s;
-    }
-
-    .service:hover {
-      transform: translateY(-5px);
-    }
-
-    .service h3 {
-      color: #00cfff;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background-color: #0b0f14;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #7f8c8d;
-      border-top: 1px solid #1f2937;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | BeyondSec</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css"> <!-- Your main styles -->
+    <link rel="stylesheet" href="styles.css"> <!-- Page-specific styles -->
 </head>
 <body>
+    <!-- Reuse your header from main site -->
+    <header>
+        <a href="../" class="logo">Beyond<span>Sec</span></a>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../#services">Services</a></li>
+                <li><a href="../about">About</a></li>
+                <li><a href="../contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-  <div class="logo">Beyondsec</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+    <main class="register-container">
+        <div class="register-card">
+            <div class="register-header">
+                <h2><i class="fas fa-shield-alt"></i> Security Consultation Request</h2>
+                <p>Fill this form to get a free cybersecurity assessment</p>
+            </div>
 
-<section class="hero">
-  <h1>Welcome to Beyondsec Technology</h1>
-  <p>Innovating Cybersecurity Solutions for a Safer Digital Future</p>
-  <a href="about.html"><button class="btn">Learn More</button></a>
-</section>
+            <form id="registrationForm" action="process.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
 
-<section class="section">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="service">
-      <h3>Penetration Testing</h3>
-      <p>Simulate cyberattacks to detect and fix vulnerabilities in your systems.</p>
-    </div>
-    <div class="service">
-      <h3>Cloud Security</h3>
-      <p>Protect your cloud infrastructure with our advanced security architecture.</p>
-    </div>
-    <div class="service">
-      <h3>Security Consultancy</h3>
-      <p>Custom advisory services for organizations seeking robust cybersecurity strategies.</p>
-    </div>
-  </div>
-</section>
+                <div class="form-group">
+                    <label for="email">Business Email*</label>
+                    <input type="email" id="email" name="email" required placeholder="john@yourcompany.com">
+                </div>
 
-<footer>
-  &copy; 2025 Beyondsec Technology. All rights reserved.
-</footer>
+                <div class="form-group">
+                    <label for="company">Company Name*</label>
+                    <input type="text" id="company" name="company" required placeholder="Acme Inc.">
+                </div>
 
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Needed*</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="Penetration Testing">Penetration Testing</option>
+                        <option value="Red Teaming">Red Teaming</option>
+                        <option value="Security Audit">Security Audit</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Security Concerns</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Describe your security needs..."></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Request Consultation
+                    </button>
+                    <p class="disclaimer">We'll contact you within 24 hours. No spam guaranteed.</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="register-info">
+            <h3>Why Register With Us?</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Free initial security assessment</li>
+                <li><i class="fas fa-check-circle"></i> CREST-certified experts</li>
+                <li><i class="fas fa-check-circle"></i> Tailored security solutions</li>
+                <li><i class="fas fa-check-circle"></i> 24/7 support response</li>
+            </ul>
+            
+            <div class="contact-alternative">
+                <p>Prefer direct contact?</p>
+                <a href="mailto:contact@beyondsec.com" class="email-link">
+                    <i class="fas fa-envelope"></i> contact@beyondsec.com
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Form validation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address');
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
