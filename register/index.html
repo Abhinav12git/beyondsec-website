@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | BeyondSec</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css"> <!-- Your main styles -->
+    <link rel="stylesheet" href="styles.css"> <!-- Page-specific styles -->
+</head>
+<body>
+    <!-- Reuse your header from main site -->
+    <header>
+        <a href="../" class="logo">Beyond<span>Sec</span></a>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../#services">Services</a></li>
+                <li><a href="../about">About</a></li>
+                <li><a href="../contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="register-container">
+        <div class="register-card">
+            <div class="register-header">
+                <h2><i class="fas fa-shield-alt"></i> Security Consultation Request</h2>
+                <p>Fill this form to get a free cybersecurity assessment</p>
+            </div>
+
+            <form id="registrationForm" action="process.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Business Email*</label>
+                    <input type="email" id="email" name="email" required placeholder="john@yourcompany.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name*</label>
+                    <input type="text" id="company" name="company" required placeholder="Acme Inc.">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Needed*</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="Penetration Testing">Penetration Testing</option>
+                        <option value="Red Teaming">Red Teaming</option>
+                        <option value="Security Audit">Security Audit</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Security Concerns</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Describe your security needs..."></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Request Consultation
+                    </button>
+                    <p class="disclaimer">We'll contact you within 24 hours. No spam guaranteed.</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="register-info">
+            <h3>Why Register With Us?</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Free initial security assessment</li>
+                <li><i class="fas fa-check-circle"></i> CREST-certified experts</li>
+                <li><i class="fas fa-check-circle"></i> Tailored security solutions</li>
+                <li><i class="fas fa-check-circle"></i> 24/7 support response</li>
+            </ul>
+            
+            <div class="contact-alternative">
+                <p>Prefer direct contact?</p>
+                <a href="mailto:contact@beyondsec.com" class="email-link">
+                    <i class="fas fa-envelope"></i> contact@beyondsec.com
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Form validation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address');
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
