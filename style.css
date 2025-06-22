@@ -1,1 +1,173 @@
+/* Registration Page Specific Styles */
+.register-container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    padding: 4rem 10%;
+    gap: 3rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #0a1a35 100%);
+}
 
+.register-card {
+    flex: 2;
+    background: rgba(23, 42, 69, 0.8);
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.register-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.register-header h2 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.register-header p {
+    color: var(--text-secondary);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 4px;
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+}
+
+.disclaimer {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.register-info {
+    flex: 1;
+    background: rgba(23, 42, 69, 0.5);
+    border-radius: 10px;
+    padding: 2rem;
+    align-self: flex-start;
+    position: sticky;
+    top: 100px;
+}
+
+.register-info h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.register-info ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.register-info ul li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+}
+
+.register-info ul li i {
+    color: var(--accent);
+}
+
+.contact-alternative {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.contact-alternative p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.email-link {
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.email-link:hover {
+    color: var(--highlight);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        padding: 2rem 5%;
+    }
+
+    .register-info {
+        position: static;
+        margin-top: 2rem;
+    }
+}
